@@ -23,10 +23,13 @@ streamlit.dataframe(fruits_to_show)
 ##LESSON 9 : 🥋 Let's Call the Fruityvice API from Our Streamlit App!
 #New section to display Fruityvice API response 
 streamlit.header("Fruityvice Fruit Advice!")
-
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+streamlit.write('The user entered ', fruit_choice)
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #streamlit.text(fruityvice_response.json()) #just write the data to the screen (removed)
+
+
 
 # take the Jason version of the response and normalize it ! 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
