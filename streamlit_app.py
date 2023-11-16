@@ -51,6 +51,10 @@ streamlit.dataframe(my_data_rows)
 streamlit.header("Fruityvice Add My Fruit!")
 add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
 streamlit.write('Thanks for adding ', add_my_fruit)
+import requests
+fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
+fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
+streamlit.dataframe(fruityvice_normalized_add)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
