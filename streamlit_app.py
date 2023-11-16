@@ -1,4 +1,8 @@
 import streamlit
+import pandas
+import requests
+import snowflake.connector
+from urllib.error import URLError
 
 streamlit.title('My Moms New Healthy Diner')
 streamlit.header('Breakfast Favorites')
@@ -9,7 +13,7 @@ streamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-import pandas
+#import pandas
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -26,7 +30,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-import requests
+#import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #streamlit.text(fruityvice_response.json()) #just write the data to the screen (removed)
 
@@ -40,7 +44,7 @@ streamlit.dataframe(fruityvice_normalized)
 streamlit.stop()
 
 #🥋 Check to Confirm the Snowflake Connector Package Will Add Successfully
-import snowflake.connector
+#import snowflake.connector
 
 ##LESSON 12: Streamlit, but with Snowflake Added
 #🥋 Let's Query Some Data, Instead 
@@ -55,7 +59,7 @@ streamlit.dataframe(my_data_rows)
 streamlit.header("Fruityvice Add My Fruit!")
 add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
 streamlit.write('Thanks for adding ', add_my_fruit)
-import requests
+#import requests
 fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
 fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
 streamlit.dataframe(fruityvice_normalized_add)
