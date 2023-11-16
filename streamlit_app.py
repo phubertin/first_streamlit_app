@@ -52,7 +52,7 @@ add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+##my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
