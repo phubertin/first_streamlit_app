@@ -48,7 +48,7 @@ streamlit.dataframe(my_data_rows)
 
 ##🎯 Can You Add A Second Text Entry Box? 
 fruit_choice = streamlit.text_input('What fruit would you want to add?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
+streamlit.write('Thanks for adding ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #streamlit.text(fruityvice_response.json()) #just write the data to the screen (removed)
