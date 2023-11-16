@@ -47,12 +47,13 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains :")
 streamlit.dataframe(my_data_rows)
 
-##🎯 Can You Add A Second Text Entry Box? 
+##🎯 Can You Add A Second Text Entry Box?
+streamlit.header("Fruityvice Add My Fruit!")
 add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
-##my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
 
