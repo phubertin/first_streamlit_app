@@ -63,24 +63,24 @@ try:
 
 ##LESSON 12: Streamlit, but with Snowflake Added
 #🥋 Let's Query Some Data, Instead 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-my_data_rows = my_cur.fetchall()
-streamlit.header("The fruit load list contains :")
-streamlit.dataframe(my_data_rows)
+# my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+# my_cur = my_cnx.cursor()
+# my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+# my_data_rows = my_cur.fetchall()
+# streamlit.header("The fruit load list contains :")
+# streamlit.dataframe(my_data_rows)
 
 ##🎯 Can You Add A Second Text Entry Box?
-streamlit.header("Fruityvice Add My Fruit!")
-add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
-streamlit.write('Thanks for adding ', add_my_fruit)
+# streamlit.header("Fruityvice Add My Fruit!")
+# add_my_fruit = streamlit.text_input('What fruit would you want to add?','Kiwi')
+# streamlit.write('Thanks for adding ', add_my_fruit)
 #import requests
-fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
-fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
-streamlit.dataframe(fruityvice_normalized_add)
+# fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
+# fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
+# streamlit.dataframe(fruityvice_normalized_add)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
 
