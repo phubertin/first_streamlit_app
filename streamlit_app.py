@@ -56,7 +56,7 @@ try:
   
 ##🥋 Add a STOP Command to Focus Our Attention
 # Don't run anything past here while we trubleshoot
-streamlit.stop()
+#streamlit.stop()
 
 #🥋 Check to Confirm the Snowflake Connector Package Will Add Successfully
 #import snowflake.connector
