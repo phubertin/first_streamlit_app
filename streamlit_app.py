@@ -44,10 +44,10 @@ try:
   
 ##🥋 Add a STOP Command to Focus Our Attention
 # Don't run anything past here while we trubleshoot
-#streamlit.stop()
+# streamlit.stop()
 
 #🥋 Check to Confirm the Snowflake Connector Package Will Add Successfully
-#import snowflake.connector
+# import snowflake.connector
 
 ##LESSON 12: Streamlit, but with Snowflake Added
 #🥋 Let's Query Some Data, Instead 
@@ -68,4 +68,4 @@ try:
 # streamlit.dataframe(fruityvice_normalized_add)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
-#my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
