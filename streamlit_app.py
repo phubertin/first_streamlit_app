@@ -68,4 +68,4 @@ try:
 # streamlit.dataframe(fruityvice_normalized_add)
 
 ##🥋 Write Code to Add Rows to Our Fruit List in Snowflake
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+#my_cur.execute("insert into fruit_load_list values ('from streamlit')")
